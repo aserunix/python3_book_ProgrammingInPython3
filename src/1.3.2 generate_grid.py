@@ -30,7 +30,7 @@ while row<rows:
     line=""
     column=0
     while column<columns:
-        i=random.randint( minimum,maximum)
+        i=random.randint( minimum, maximum)
         s=str(i)
         while len(s)<10:
             s=" "+s
