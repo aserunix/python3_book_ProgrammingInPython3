@@ -19,7 +19,7 @@ def print_unicode_table(word):
 
 word=None
 if len(sys.argv)>1:
-    if sys.argv[1] in ("-h","--help"):
+    if sys.argv[1]  in ("-h","--help"):
         print("usage:{0}[string]".format(sys.argv[0]))
         word=0
     else:
