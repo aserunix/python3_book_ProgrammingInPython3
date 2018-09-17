@@ -24,7 +24,7 @@ def print_line(line,color,maxwidth):
                 field =field.title()
                 field=field.replace("And","and")
                 if len(field)<=maxwidth:
-                    field=escapt_html(field)
+                    field=escape_html(field)
                 else:
                     field="{0}...".format(escape_html(field[:maxwidth]))
                 print("<td>{0}</td>".format(field))
@@ -43,12 +43,26 @@ def extract_fields(line):
             else:
                 field+=c    # other quote inside quoted string
             continue
-        
+        if quote is None and c== ",": # end of a field
+            fields.append(field)
+            field=""
+        else:
+            field +=c # accumulating a field
+    if field:
+        fields.append(field) #adding the last field
+    return fields
+
+def escape_html(text):
+    text=text.replace("&","&amp;")
+    text=text.replace("<","&lt;")
+    text=text.replace(">","&gt;")
+    return text
 
 def main():
     maxwidth=100
     print_start()
     count=0
+    color="white";
     while True:
         try :
             line=input()
