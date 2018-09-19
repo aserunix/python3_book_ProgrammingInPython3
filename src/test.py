@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 import collections
 
-# i=1
+## i=1
 # s="1"
 # while i<10:
 #     i+=1
