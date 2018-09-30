@@ -21,7 +21,10 @@
 # for a in range(1,5):
 #     print(a)
 
-for t in zip(range(4),range(0,10,2),range(1,10,2)):
+# for t in zip(range(4),range(0,10,2),range(1,10,2)):
+#     print(t)
+
+for t in list(range(4))+list(range(0,10,2)):
     print(t)
 
 
